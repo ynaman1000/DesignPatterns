@@ -5,6 +5,9 @@
         public CasualTypeShoe(IShoeType shoe) : base(shoe)
         {
         }
+        public CasualTypeShoe(CasualTypeShoe shoe) : base(shoe)
+        {
+        }
 
         public override IShoeType Clone()
         {

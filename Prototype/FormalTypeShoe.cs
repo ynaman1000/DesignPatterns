@@ -5,6 +5,9 @@
         public FormalTypeShoe(IShoeType shoe) : base(shoe)
         {
         }
+        public FormalTypeShoe(FormalTypeShoe shoe) : base(shoe)
+        {
+        }
 
         public override IShoeType Clone()
         {

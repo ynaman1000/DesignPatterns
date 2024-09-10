@@ -19,17 +19,19 @@ Console.WriteLine("");
 
 var shoeTemplate = new ShoeBase();
 shoeTemplate.Name = "base";
-var shoes = new List<IShoeType> { new ShoeBase(shoeTemplate) };
-shoeTemplate.Name = "casual";
-shoes.Add(new CasualTypeShoe(shoeTemplate));
-shoeTemplate.Name = "formal";
-shoes.Add(new FormalTypeShoe(shoeTemplate));
-shoeTemplate.Name = "sport";
-shoes.Add(new SportsTypeShoe(shoeTemplate));
+var shoes = new List<IShoeType> { shoeTemplate.Clone() };
+var casualShoe = new CasualTypeShoe(shoeTemplate);
+casualShoe.Name = "casual";
+shoes.Add(casualShoe);
+var formalShoe = new FormalTypeShoe(shoeTemplate);
+formalShoe.Name = "formal";
+shoes.Add(formalShoe);
+var sportShoe = new SportsTypeShoe("adidas", "basketball", shoeTemplate);
+sportShoe.Name = "sport";
+shoes.Add(sportShoe);
 var shoesClone = new List<IShoeType>();
 foreach (var shoe in shoes)
-{
     shoesClone.Add(shoe.Clone());
-}
 shoesClone[0].Name = "baseClone";
+shoesClone[1].Name = "casualClone";
 Console.WriteLine("");
