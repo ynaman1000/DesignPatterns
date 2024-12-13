@@ -12,7 +12,7 @@ namespace AbstractFactory.Shoes
         }
 
         private IDiscountStrategy _discountStrategy;
-        public IDiscountStrategy DiscountStrategy  // read-only instance property
+        public IDiscountStrategy DiscountStrategy
         {
             get => _discountStrategy;
             set => _discountStrategy = value;
