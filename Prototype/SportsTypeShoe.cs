@@ -1,20 +1,20 @@
 ﻿namespace Prototype
 {
-    public class SportsTypeShoe : ShoeBase
+    public class SportsShoe : ShoeBase
     {
         private string _brandName;
         private string _sportName;
-        public SportsTypeShoe(string brandName, string sportName) : base()
+        public SportsShoe(string brandName, string sportName) : base()
         {
             _brandName = brandName;
             _sportName = sportName;
         }
-        public SportsTypeShoe(string brandName, string sportName, IShoeType shoe) : base(shoe)
+        public SportsShoe(string brandName, string sportName, IShoeType shoe) : base(shoe)
         {
             _brandName = brandName;
             _sportName = sportName;
         }
-        public SportsTypeShoe(SportsTypeShoe sportShoe) : base(sportShoe)
+        public SportsShoe(SportsShoe sportShoe) : base(sportShoe)
         {
             _brandName = sportShoe._brandName;
             _sportName = sportShoe._sportName;
@@ -22,8 +22,7 @@
 
         public override IShoeType Clone()
         {
-            return new SportsTypeShoe(this);
+            return (IShoeType)MemberwiseClone();
         }
-
     }
 }

@@ -2,7 +2,7 @@
 {
     public class ShoeBase : IShoeType
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public ShoeBase() { }
         public ShoeBase(IShoeType shoe)
         {
@@ -11,7 +11,7 @@
 
         public virtual IShoeType Clone()
         {
-            return new ShoeBase(this);
+            return (IShoeType)MemberwiseClone();
         }
 
     }
