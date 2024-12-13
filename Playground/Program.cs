@@ -6,8 +6,8 @@ var factoryMethodClient = new AbstractFactoryClient();
 factoryMethodClient.CreateShoe("Sport", "Nike");
 factoryMethodClient.Shoe.CreateInventoryManagementPlan();
 factoryMethodClient.Shoe.CreateDiscountingStrategy();
-factoryMethodClient.Shoe.InventoryManagementPlan.GetInventoryCycle();
-factoryMethodClient.Shoe.DiscountStrategy.GetDiscount();
+var invntryCycle = factoryMethodClient.Shoe.InventoryManagementPlan.GetInventoryCycle();
+var discount = factoryMethodClient.Shoe.DiscountStrategy.GetDiscount();
 Console.WriteLine("");
 
 var builder = new SportShoeBuilder();
